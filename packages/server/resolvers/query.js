@@ -1,18 +1,18 @@
 import prisma from '../prisma/prisma.js'
 
 const Query = {
-  Approved_Kits: (parent, args) => {
+  Approved_Kits: () => {
     return prisma.kit.findMany({
       where: {
         approved: true,
       },
     })
   },
-  To_Approve_Kits: (parent, args) => {
+  To_Approve_Kits: () => {
     return prisma.kit.findMany({
-        where: {
-            approved: false,
-        }
+      where: {
+        approved: false,
+      },
     })
   },
 }
