@@ -1,7 +1,7 @@
 import prisma from '../prisma/prisma.js'
 
 const Mutation = {
-  add: (parent, args) => {
+  register: (args) => {
     return prisma.kit.create({
       data: {
         kit_company: args.kit_company,
