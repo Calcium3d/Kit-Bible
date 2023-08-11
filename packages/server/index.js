@@ -4,18 +4,18 @@ import resolvers from './resolvers/resolver.js'
 
 const typeDefs = `#graphql
 	type Kit {
-  	id: ID!,
-		kit_company: String!,
-		kit: String!,
-		car_company: String!,
-		car: String!,
-		image_link: String!,
-		approved: Boolean!,
+  	id: ID!
+		kit_company: String!
+		kit: String!
+		car_company: String!
+		car: String!
+		image_link: String!
+		approved: Boolean!
   }
 
 	type Query {
-		Approved_Kits: (approved: Boolean): [Kit]
-		To_Approve_Kits: (approved: Boolean): [Kit]
+		Approved_Kits (approved: Boolean): [Kit]
+		To_Approve_Kits (approved: Boolean): [Kit]
 	}
 
 	type Mutation {
@@ -30,6 +30,6 @@ const server = new ApolloServer({
 
 const { url } = await startStandaloneServer(server, {
   listen: { port: 4000 },
-});
+})
 
 console.log(`🚀  Server ready at: ${url}`)
